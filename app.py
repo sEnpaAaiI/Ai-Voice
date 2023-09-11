@@ -12,8 +12,8 @@ shell_script = './tools/dlmodels.sh'
 os.system(f'chmod +x {shell_script}')
 os.system('apt install git-lfs')
 os.system('git lfs install')
-os.system('apt -y install -qq aria2')
-
+os.system('apt-get -y install aria2')
+os.system('aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/hubert_base.pt -d . -o hubert_base.pt')
 try:
     return_code = os.system(shell_script)
     if return_code == 0:
