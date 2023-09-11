@@ -32,13 +32,11 @@ os.chdir(current_path)
 
 start_time = time.time()
 
-!nvidia-smi
-
 # Clone the repository using the complete phrase as the folder name
 maville = "R"
 acat = "VC"
 juxxn = maville + acat
-!git clone https://github.com/IAHispano/Applio-Utilities ./Applio-$juxxn-Fork/utils
+os.system('git clone https://github.com/IAHispano/Applio-Utilities ./Applio-$juxxn-Fork/utils')
 
 end_time = time.time()
 elapsed_time = end_time - start_time
@@ -78,7 +76,7 @@ start_time_setup = time.time()
 setup_environment(ForceUpdateDependencies, ForceTemporaryStorage)
 
 # Apparently fastapi is getting errors as of writing according to #help-rvc
-!pip install fastapi==0.88.0
+os.system('pip install fastapi==0.88.0')
 
 end_time_setup = time.time()
 elapsed_time_setup = end_time_setup - start_time_setup
@@ -98,7 +96,7 @@ base_url = f"https://huggingface.co/lj1995/VoiceConversionWebU{part2}"
 complete_url = base_url + "/resolve/main/rmvpe.pt"
 
 # Download the file using the complete URL
-!wget {complete_url} -P {complete_phrase}
+os.system('wget {complete_url} -P {complete_phrase}')
 
 end_time_clone = time.time()
 elapsed_time_clone = end_time_clone - start_time_clone
@@ -110,19 +108,18 @@ print("Cell completed.")
 total_time = elapsed_time + elapsed_time_setup + elapsed_time_clone
 print(f"Total time taken: {total_time} seconds")
 
-!pip install -q stftpitchshift==1.5.1
-!pip install gradio==3.34.0
-!pip install yt-dlp
-!pip install pedalboard
-!pip install pathvalidate
-!pip install nltk
-!pip install edge-tts
-!pip install git+https://github.com/suno-ai/bark.git
-!pip install wget -q
-!pip install unidecode -q
-!pip install gtts
-!pip install pip install tensorboardX
-namepython = "infer-web.py"
+os.system("pip install -q stftpitchshift==1.5.1")
+os.system("pip install gradio==3.34.0")
+os.system("pip install yt-dlp")
+os.system("pip install pedalboard")
+os.system("pip install pathvalidate")
+os.system("pip install nltk")
+os.system("pip install edge-tts")
+os.system("pip install git+https://github.com/suno-ai/bark.git")
+os.system("pip install wget -q")
+os.system("pip install unidecode -q")
+os.system("pip install gtts")
+os.system("pip install tensorboardX")
 
 
 
@@ -227,14 +224,14 @@ except FileNotFoundError:
 
 
 def tempus_killed_server():
-    %cd ./Retrieval-based-{complete_phrase}
-    %load_ext tensorboard
+    os.system("cd ./Retrieval-based-{complete_phrase}")
+    os.system("load_ext tensorboard")
     clear_output()
-    %tensorboard --logdir ./Applio-$juxxn-Fork/logs
-    !mkdir -p ./Applio-$juxxn-Fork/audios
+    os.system("tensorboard --logdir ./Applio-$juxxn-Fork/logs")
+    os.system("mkdir -p ./Applio-$juxxn-Fork/audios")
     print("Try")
     arguments = "--colab --pycmd python3"
-    !python3 $namepython $arguments
+    os.system("python3 $namepython $arguments")
 
 
 if LoadBackupDrive:
