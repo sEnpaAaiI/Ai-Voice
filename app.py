@@ -3113,21 +3113,11 @@ def GradioRun(app):
         config.iscolab or config.paperspace
     ):  
         app.queue(concurrency_count=concurrency_count, max_size=max_size).launch(
-        server_name="0.0.0.0",
-        inbrowser=not config.noautoopen,
-        server_port=config.listen_port,
-        quiet=True,
         favicon_path="./images/icon.png",
-        share=share_gradio_link,
         )
     else:
         app.queue(concurrency_count=concurrency_count, max_size=max_size).launch(
-        server_name="0.0.0.0",
-        inbrowser=not config.noautoopen,
-        server_port=config.listen_port,
-        quiet=True,
         favicon_path=".\images\icon.png",
-        share=share_gradio_link,
         )
 
 if __name__ == "__main__":
