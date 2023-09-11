@@ -36,7 +36,7 @@ start_time = time.time()
 maville = "R"
 acat = "VC"
 juxxn = maville + acat
-os.system('git clone https://github.com/IAHispano/Applio-Utilities ./Applio-$juxxn-Fork/utils')
+os.system('git clone https://github.com/IAHispano/Applio-Utilities ./Applio-RVC-Fork/utils')
 
 end_time = time.time()
 elapsed_time = end_time - start_time
@@ -53,8 +53,8 @@ start_time = time.time()
 maville = "R"
 acat = "VC"
 juxxn = maville + acat
-complete_phrase = './Applio-'+juxxn+'-Fork/'
-os.chdir(f'./Applio-{juxxn}-Fork/')
+complete_phrase = './Applio-RVC-Fork/'
+os.chdir(f'./Applio-RVC-Fork/')
 from utils.dependency import *
 from utils.clonerepo_experimental import *
 os.chdir("..")
@@ -159,8 +159,8 @@ LoadBackupDrive = False #@param{type:"boolean"}
 #@markdown Make regular backups of your model's training.
 AutoBackups = True #@param{type:"boolean"}
 
-complete_phrase = './Applio-'+juxxn+'-Fork/'
-os.chdir(f'./Applio-{juxxn}-Fork/')
+complete_phrase = './Applio-RVC-Fork/'
+os.chdir(f'./Applio-RVC-Fork/')
 from utils import backups
 
 def generate_random_string(length=6):
@@ -174,29 +174,29 @@ if namepython == "infer-web.py":
   os.rename(os.path.join(complete_phrase, "infer-web.py"), os.path.join(complete_phrase, nuevo_nombre))
   namepython = nuevo_nombre
 
-LOGS_FOLDER = './Applio-' + juxxn + '-Fork/logs'
+LOGS_FOLDER = './Applio-RVC-Fork/logs'
 if not os.path.exists(LOGS_FOLDER):
     os.makedirs(LOGS_FOLDER)
     clear_output()
 
-WEIGHTS_FOLDER = './Applio-' + juxxn + '-Fork' + '/logs' + '/weights'
+WEIGHTS_FOLDER = './Applio-RVC-Fork' + '/logs' + '/weights'
 if not os.path.exists(WEIGHTS_FOLDER):
     os.makedirs(WEIGHTS_FOLDER)
     clear_output()
 
-others_FOLDER = './Applio-' + juxxn + '-Fork' + '/audio-others'
+others_FOLDER = './Applio-RVC-Fork' + '/audio-others'
 if not os.path.exists(others_FOLDER):
     os.makedirs(others_FOLDER)
     clear_output()
 
-audio_outputs_FOLDER = './Applio-' + juxxn + '-Fork' + '/audio-outputs'
+audio_outputs_FOLDER = './Applio-RVC-Fork' + '/audio-outputs'
 if not os.path.exists(audio_outputs_FOLDER):
     os.makedirs(audio_outputs_FOLDER)
     clear_output()
 
 #@markdown Choose the language in which you want the interface to be available.
-i18n_path = './Applio-' + juxxn + '-Fork/' + 'i18n.py'
-i18n_new_path = './Applio-' + juxxn + '-Fork/' + 'utils/i18n.py'
+i18n_path = './Applio-RVC-Fork/' + 'i18n.py'
+i18n_new_path = './Applio-RVC-Fork/' + 'utils/i18n.py'
 try:
     if os.path.exists(i18n_path) and os.path.exists(i18n_new_path):
         shutil.move(i18n_new_path, i18n_path)
@@ -227,8 +227,8 @@ def tempus_killed_server():
     os.system("cd ./Retrieval-based-{complete_phrase}")
     os.system("load_ext tensorboard")
     clear_output()
-    os.system("tensorboard --logdir ./Applio-$juxxn-Fork/logs")
-    os.system("mkdir -p ./Applio-$juxxn-Fork/audios")
+    os.system("tensorboard --logdir ./Applio-RVC-Fork/logs")
+    os.system("mkdir -p ./Applio-RVC-Fork/audios")
     print("Try")
     arguments = "--colab --pycmd python3"
     os.system("python3 $namepython $arguments")
