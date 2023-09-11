@@ -1937,7 +1937,11 @@ def GradioSetup(UTheme=gr.themes.Soft()):
     default_weight = names[0] if names else '' 
 
     with gr.Blocks(theme='JohnSmith9982/small_and_pretty', title="Applio") as app:
-        gr.HTML("<h1> 🍏 Applio (Mangio-RVC-Fork) </h1>")
+        gr.HTML("<h1> 🍏 Applio (Mangio-RVC-Fork HF) </h1>")
+        gr.HTML("<h4> The current space only uses CPU, so it's only for inference. If you have issues with the queue, I recommend duplicating the space. </h4>")
+        gr.Markdown(
+            "[![Duplicate this Space](https://huggingface.co/datasets/huggingface/badges/raw/main/duplicate-this-space-sm-dark.svg)](https://huggingface.co/spaces/r3gm/RVC_HF?duplicate=true)\n\n"
+        )        
         with gr.Tabs():
             with gr.TabItem(i18n("Model Inference")):
                 with gr.Row():
