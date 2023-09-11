@@ -9,6 +9,7 @@ os.environ["no_proxy"] = "localhost, 127.0.0.1, ::1"
 
 # Download models
 shell_script = './tools/dlmodels.sh'
+os.system(f'chmod +x {shell_script}')
 
 try:
     return_code = os.system(shell_script)
