@@ -1,8 +1,8 @@
 ---
-title: Random App
+title: RVC Inference HF
 emoji: 👀
-colorFrom: gray
-colorTo: pink
+colorFrom: green
+colorTo: green
 sdk: gradio
 sdk_version: 3.43.2
 app_file: app.py
