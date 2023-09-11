@@ -55,6 +55,7 @@ acat = "VC"
 juxxn = maville + acat
 complete_phrase = './Applio-RVC-Fork/'
 os.chdir(f'./Applio-RVC-Fork/')
+os.system('cd Applio-RVC-Fork')
 from utils.dependency import *
 from utils.clonerepo_experimental import *
 os.chdir("..")
