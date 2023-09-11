@@ -2856,8 +2856,8 @@ def GradioSetup(UTheme=gr.themes.Soft()):
                         gr.Markdown(
                             value="## " + i18n("Merge your generated audios with the instrumental")
                         )
-                        gr.Markdown(value="",scale="-0.5",visible=True)
-                        gr.Markdown(value="",scale="-0.5",visible=True)
+                        gr.Markdown(value=".",visible=True)
+                        gr.Markdown(value=".",visible=True)
                         with gr.Row():
                             with gr.Column():
                                 dropbox = gr.File(label=i18n("Drag your audio here:"))
