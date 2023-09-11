@@ -8,15 +8,14 @@ os.environ["OPENBLAS_NUM_THREADS"] = "1"
 os.environ["no_proxy"] = "localhost, 127.0.0.1, ::1"
 
 # Download models
-import subprocess
 shell_script = './tools/dlmodels.sh'
+
 try:
-    subprocess.run(shell_script, shell=True, check=True)
-    print("Shell script executed successfully.")
-except subprocess.CalledProcessError as e:
-    print(f"Error running shell script: {e}")
-except FileNotFoundError:
-    print(f"Shell script not found: {shell_script}")
+    return_code = os.system(shell_script)
+    if return_code == 0:
+        print("Shell script executed successfully.")
+    else:
+        print(f"Shell script failed with return code {return_code}")
 except Exception as e:
     print(f"An error occurred: {e}")
 
