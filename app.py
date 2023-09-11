@@ -1,5 +1,5 @@
 import os, sys
-
+os.system("pip install pyworld") # ==0.3.3
 now_dir = os.getcwd()
 sys.path.append(now_dir)
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
