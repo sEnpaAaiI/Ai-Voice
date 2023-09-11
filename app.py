@@ -10,6 +10,9 @@ os.environ["no_proxy"] = "localhost, 127.0.0.1, ::1"
 # Download models
 shell_script = './tools/dlmodels.sh'
 os.system(f'chmod +x {shell_script}')
+os.system('apt install git-lfs')
+os.system('git lfs install')
+os.system('apt -y install -qq aria2')
 
 try:
     return_code = os.system(shell_script)
