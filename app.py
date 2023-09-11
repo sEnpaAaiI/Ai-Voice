@@ -6,9 +6,8 @@ import shutil
 from IPython.utils import capture
 from subprocess import getoutput
 from urllib.parse import unquote
-from google.colab.output import eval_js
+#from google.colab.output import eval_js
 os.environ["colab_url"] = eval_js("google.colab.kernel.proxyPort(7860, {'cache': false})")
-os.system('pip install Ipython')
 # Store the current working directory
 current_path = os.getcwd()
 
