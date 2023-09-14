@@ -2440,6 +2440,9 @@ def GradioSetup(UTheme=gr.themes.Soft()):
                     
                 
             with gr.TabItem(i18n("Train")):
+                gr.Markdown("Training and All in One Inference Without UI/Gradio, Prevent Banning")
+                gr.Markdown("[Repository](https://github.com/ardha27/AI-Song-Cover-RVC)")
+
                 with gr.Accordion(label=i18n("Step 1: Processing data")):
                     with gr.Row():
                         exp_dir1 = gr.Textbox(label=i18n("Enter the model name:"), value=i18n("Model_Name"))
