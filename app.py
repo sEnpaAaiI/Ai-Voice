@@ -1937,11 +1937,12 @@ def GradioSetup(UTheme=gr.themes.Soft()):
     default_weight = names[0] if names else '' 
 
     with gr.Blocks(theme='JohnSmith9982/small_and_pretty', title="Applio") as app:
-        gr.HTML("<h1> 🍏 Applio (Mangio-RVC-Fork HF) </h1>")
+        gr.Markdown("🍏 Applio (Mangio-RVC-Fork HF)")
+        gr.Markdown("More spaces: [Aesthetic_RVC_Inference_HF](https://huggingface.co/spaces/r3gm/Aesthetic_RVC_Inference_HF), [AICoverGen](https://huggingface.co/spaces/r3gm/AICoverGen), [Ultimate-Vocal-Remover-WebUI](https://huggingface.co/spaces/r3gm/Ultimate-Vocal-Remover-WebUI), [Advanced-RVC-Inference](https://huggingface.co/spaces/r3gm/Advanced-RVC-Inference)")
         gr.HTML("<h4> The current space only uses CPU, so it's only for inference. If you have issues with the queue, I recommend duplicating the space. </h4>")
         gr.Markdown(
             "[![Duplicate this Space](https://huggingface.co/datasets/huggingface/badges/raw/main/duplicate-this-space-sm-dark.svg)](https://huggingface.co/spaces/r3gm/RVC_HF?duplicate=true)\n\n"
-        )        
+        )     
         with gr.Tabs():
             with gr.TabItem(i18n("Model Inference")):
                 with gr.Row():
@@ -2440,8 +2441,7 @@ def GradioSetup(UTheme=gr.themes.Soft()):
                     
                 
             with gr.TabItem(i18n("Train")):
-                gr.Markdown("Training and All in One Inference Without UI/Gradio, Prevent Banning")
-                gr.Markdown("[Repository](https://github.com/ardha27/AI-Song-Cover-RVC)")
+
 
                 with gr.Accordion(label=i18n("Step 1: Processing data")):
                     with gr.Row():
