@@ -2868,6 +2868,7 @@ def GradioSetup(UTheme=gr.themes.Soft()):
                                 ], outputs=[ttsvoice, original_ttsvoice])
             
             with gr.TabItem(i18n("Resources")):
+                gr.Markdown(f"Limit download size is {os.getenv('MAX_DOWNLOAD_SIZE')} MB, duplicate the space for modify the limit")
                 easy_infer.download_model()
                 easy_infer.download_backup()
                 easy_infer.download_dataset(trainset_dir4)
