@@ -117,10 +117,23 @@ def find_folder_parent(search_dir, folder_name):
     return None
 
 
+def delete_large_files(directory_path, max_size_megabytes):
+    for filename in os.listdir(directory_path):
+        file_path = os.path.join(directory_path, filename)
+        if os.path.isfile(file_path):
+            size_in_bytes = os.path.getsize(file_path)
+            size_in_megabytes = size_in_bytes / (1024 * 1024)  # Convert bytes to megabytes
+
+            if size_in_megabytes > max_size_megabytes:
+                print("###################################")
+                print(f"Deleting s*** {filename} (Size: {size_in_megabytes:.2f} MB)")
+                os.remove(file_path)
+                print("###################################")    
 
 def download_from_url(url):
     parent_path = find_folder_parent(".", "pretrained_v2")
     zips_path = os.path.join(parent_path, 'zips')
+    print(f"Limit download size in MB {os.getenv('MAX_DOWNLOAD_SIZE')}, duplicate the space for modify the limit")
     
     if url != '':
         print(i18n("Downloading the file: ") + f"{url}")
@@ -211,6 +224,8 @@ def download_from_url(url):
             os.chdir('./zips')
             wget.download(url)
             
+        #os.chdir('./zips')    
+        delete_large_files(zips_path, int(os.getenv("MAX_DOWNLOAD_SIZE")))    
         os.chdir(parent_path)
         print(i18n("Full download"))
         return "downloaded"
