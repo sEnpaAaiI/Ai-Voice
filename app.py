@@ -1805,11 +1805,11 @@ def __bark__(text, voice_preset):
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
     dtype = torch.float32 if "cpu" in device else torch.float16
     bark_processor = AutoProcessor.from_pretrained(
-        "suno/bark",
+        "suno/bark-small",
         cache_dir=os.path.join(now_dir,"tts","suno/bark"),
         torch_dtype=dtype)
     bark_model = BarkModel.from_pretrained(
-        "suno/bark",
+        "suno/bark-small",
         cache_dir=os.path.join(now_dir,"tts","suno/bark"),
         torch_dtype=dtype).to(device)
     # bark_model.enable_cpu_offload()
