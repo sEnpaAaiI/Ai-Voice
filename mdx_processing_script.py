@@ -18,14 +18,21 @@ model_params = "https://raw.githubusercontent.com/TRvlvr/application_data/main/m
 _Models = "https://github.com/TRvlvr/model_repo/releases/download/all_public_uvr_models/"
 # _models = "https://pastebin.com/raw/jBzYB8vz"
 _models = "https://raw.githubusercontent.com/TRvlvr/application_data/main/filelists/download_checks.json"
-stem_naming = "https://pastebin.com/raw/mpH4hRcF"
+#stem_naming = "https://pastebin.com/raw/mpH4hRcF"
 
 file_folder = "Colab-for-MDX_B"
 model_ids = requests.get(_models).json()
 model_ids = model_ids["mdx_download_list"].values()
 #print(model_ids)
 model_params = requests.get(model_params).json()
-stem_naming = requests.get(stem_naming).json()
+#stem_naming = requests.get(stem_naming).json()
+stem_naming = {
+    "Vocals": "Instrumental",
+    "Other": "Instruments",
+    "Instrumental": "Vocals",
+    "Drums": "Drumless",
+    "Bass": "Bassless"
+}
 
 os.makedirs("tmp_models", exist_ok=True)
 
