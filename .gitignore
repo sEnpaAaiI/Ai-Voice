@@ -1,7 +1,6 @@
 # Applio
 logs
 *.exe
-*.pt
 *.pth
 *.index
 *.wav
@@ -22,7 +21,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
